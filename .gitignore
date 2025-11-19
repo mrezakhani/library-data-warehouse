@@ -2,6 +2,9 @@
 *.bkp
 .$*.bkp
 
+# Word documents (PDFs are included)
+*.docx
+
 # IDE
 .idea/
 

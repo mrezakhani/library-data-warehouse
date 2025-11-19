@@ -1,0 +1,161 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.7 Chrome/138.0.7204.251 Electron/37.7.1 Safari/537.36" version="28.2.7">
+  <diagram name="Seite-1" id="bibliothek-mer-diagram">
+    <mxGraphModel dx="1426" dy="961" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;div&gt;Data Warehouse - Bibliotheksverwaltungssystem&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;MER-Modell" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="10" width="580" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="fact-ausleihe-cube" value="" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=50;direction=south;fontStyle=5;html=1;whiteSpace=wrap;fontSize=15;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="390" y="369" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="fact-ausleihe-label" value="FACT_AUSLEIHE" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=15;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="430" y="379" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fact-reservierung-cube" value="" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=40;direction=south;fontStyle=5;html=1;whiteSpace=wrap;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=#ffd966;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="435" y="581.5" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="fact-reservierung-label" value="FACT_RESERVIERUNG" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="460" y="590" width="150" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-zeit-tag" value="Tag" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="100" y="429" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-tag-monat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-zeit-tag" target="dim-zeit-monat" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-zeit-monat" value="Monat" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="100" y="369" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-monat-quartal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-zeit-monat" target="dim-zeit-quartal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-zeit-quartal" value="Quartal" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="100" y="309" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-quartal-jahr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-zeit-quartal" target="dim-zeit-jahr" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-zeit-jahr" value="Jahr" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="100" y="249" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-jahr-zeit-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-zeit-jahr" target="dim-zeit-top" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-zeit-top" value="DIM_ZEIT" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="115" y="159" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-tag-fact" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.583;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;" parent="1" source="dim-zeit-tag" target="fact-ausleihe-cube" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="519" as="sourcePoint" />
+            <mxPoint x="330" y="469" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dim-buch-titel" value="Titel" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="820" y="416" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-titel-autor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-buch-titel" target="dim-buch-autor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-buch-autor" value="Autor" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="820" y="356" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-autor-kategorie" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-buch-autor" target="dim-buch-kategorie" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-buch-kategorie" value="Kategorie" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="820" y="296" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-kategorie-verlag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-buch-kategorie" target="dim-buch-verlag" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-buch-verlag" value="Verlag" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="820" y="236" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-verlag-buch-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-buch-verlag" target="dim-buch-top" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-buch-top" value="DIM_BUCH" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="829" y="130" width="86" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-titel-fact" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.492;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;" parent="1" source="dim-buch-titel" target="fact-ausleihe-cube" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="449" as="sourcePoint" />
+            <mxPoint x="730" y="399" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dim-mitglied-name" value="Status" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="465" y="259" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-name-typ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-mitglied-name" target="dim-mitglied-typ" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-mitglied-typ" value="Mitgliedschaftstyp" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=14;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="445" y="199" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-typ-mitglied-top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="dim-mitglied-typ" target="dim-mitglied-top" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dim-mitglied-top" value="DIM_MITGLIED" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="460" y="129" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-name-fact" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.029;entryY=0.441;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;" parent="1" source="dim-mitglied-name" target="fact-ausleihe-cube" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="319" as="sourcePoint" />
+            <mxPoint x="580" y="269" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-fact-to-fact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.077;entryY=0.425;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;" parent="1" source="fact-ausleihe-cube" target="fact-reservierung-cube" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-zeit-reservierung" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="470" as="sourcePoint" />
+            <mxPoint x="430" y="639" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="640" />
+              <mxPoint x="280" y="639" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-buch-reservierung" value="" style="endArrow=none;html=1;rounded=0;exitX=0.6;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="882" y="456" as="sourcePoint" />
+            <mxPoint x="632" y="639" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="882" y="639" />
+              <mxPoint x="752" y="639" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-mitglied-reservierung" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.977;entryY=0.565;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;" parent="1" source="dim-mitglied-name" target="fact-reservierung-cube" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="369" as="sourcePoint" />
+            <mxPoint x="580" y="319" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="280" />
+              <mxPoint x="680" y="749" />
+              <mxPoint x="520" y="749" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i5hf69aXIfub7wx61en5-1" value="Semister" style="whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=15;gradientColor=#FFCE9F;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="230" y="309" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i5hf69aXIfub7wx61en5-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;strokeWidth=2;" parent="1" source="dim-zeit-tag" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="420" as="sourcePoint" />
+            <mxPoint x="280" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i5hf69aXIfub7wx61en5-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="i5hf69aXIfub7wx61en5-1" target="dim-zeit-top" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="300" as="sourcePoint" />
+            <mxPoint x="290" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
